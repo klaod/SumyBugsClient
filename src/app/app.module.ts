@@ -10,11 +10,13 @@ import {appRoutes} from './app.router';
 import {IssuesApiService} from './services/issues-api.service';
 import {MainModule} from './main/main.module';
 import { IssueComponent } from './issue/issue.component';
+import { ModerateComponent } from './moderate/moderate.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    IssueComponent
+    IssueComponent,
+    ModerateComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
