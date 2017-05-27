@@ -1,10 +1,16 @@
-.issueElement{
-    float: left;
-    position: relative;
+
+.thumbnail {
+  position: relative;
+  padding: 0px;
+  margin-bottom: 20px;
 }
-.img img {
-    width: 200px;
-    height: 200px;
-    margin: auto;
-    display: block;
+
+.thumbnail img {
+  /*width: 100%;*/
+  max-height: 400px;
+ margin: 0 auto;
+}
+
+.thumbnail hr {
+  margin: 1px;
 }

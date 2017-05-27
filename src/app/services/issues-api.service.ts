@@ -14,7 +14,6 @@ export class IssuesApiService {
   getIssues(req) {
     let request = this.address + req;
     console.log(encodeURI(request));
-    debugger;
     return this.http.get(encodeURI(request)).map(res => res.json()).catch(this.handleError);
   }
   handleError(err: any) {

@@ -11,6 +11,7 @@ import {IssuesApiService} from './services/issues-api.service';
 import {MainModule} from './main/main.module';
 import {ModerateModule} from './moderate/moderate.module';
 
+import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
 @NgModule({
   declarations: [
     AppComponent
@@ -22,7 +23,8 @@ import {ModerateModule} from './moderate/moderate.module';
     HttpModule,
     IssuesModule,
     MainModule,
-    ModerateModule,
+    AlertModule,
+    ModerateModule
   ],
   providers: [IssuesApiService],
   bootstrap: [AppComponent]
