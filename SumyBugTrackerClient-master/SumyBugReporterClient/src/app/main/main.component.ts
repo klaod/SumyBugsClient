@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Issue} from '../issues/issue.model';
-import {IssuesApiService} from "../services/issues-api.service";
+import {IssuesApiService} from '../services/issues-api.service';
 
 @Component({
   selector: 'app-main',
@@ -8,10 +8,10 @@ import {IssuesApiService} from "../services/issues-api.service";
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  topRatedIssues: Issue[];
+  notCompetedIssues: Issue[];
   constructor(private issuesApi: IssuesApiService) { }
 
   ngOnInit() {
-     this.topRatedIssues = this.issuesApi.getTop3Issues();
+     this.issuesApi.getIssues().subscribe(issues => this.notCompetedIssues = issues);
   }
 }
