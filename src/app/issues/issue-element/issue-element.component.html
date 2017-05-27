@@ -17,7 +17,7 @@
       <p>{{issue.created_at*1000 | date :'yMMMdjms' }}</p>
       <p *ngIf="issue.address.toString() != ''"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;{{issue.address}}
       </p>
-      <p><a href="#" class="btn btn-info btn-xs" role="button">Button</a> <a href="#" class="btn btn-default btn-xs"
+      <p><a href="#" class="btn btn-info btn-xs" routerLink="/issue" (click)="addIssueToStore()"  role="button">Button</a> <a href="#" class="btn btn-default btn-xs"
                                                                              role="button">Button</a></p>
     </div>
   </div>

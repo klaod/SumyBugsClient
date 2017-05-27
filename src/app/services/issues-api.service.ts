@@ -11,8 +11,9 @@ export class IssuesApiService {
   issueElements: Issue[];
   address = 'http://54.164.108.6:3000/';
   constructor(private http: Http) {}
+
   getIssues(req) {
-    let request = this.address + req;
+    const request = this.address + req;
     console.log(encodeURI(request));
     return this.http.get(encodeURI(request)).map(res => res.json()).catch(this.handleError);
   }
