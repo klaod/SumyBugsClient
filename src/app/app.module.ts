@@ -9,13 +9,12 @@ import {RouterModule} from '@angular/router';
 import {appRoutes} from './app.router';
 import {IssuesApiService} from './services/issues-api.service';
 import {MainModule} from './main/main.module';
-import { IssueComponent } from './issue/issue.component';
+import {ModerateModule} from './moderate/moderate.module';
 
 import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
 @NgModule({
   declarations: [
-    AppComponent,
-    IssueComponent
+    AppComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -24,7 +23,8 @@ import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
     HttpModule,
     IssuesModule,
     MainModule,
-    AlertModule
+    AlertModule,
+    ModerateModule
   ],
   providers: [IssuesApiService],
   bootstrap: [AppComponent]

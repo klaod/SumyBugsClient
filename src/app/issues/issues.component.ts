@@ -12,6 +12,9 @@ export class IssuesComponent implements OnInit {
   constructor(private issuesApi: IssuesApiService) { }
 
   ngOnInit() {
-    this.issuesApi.getIssues('issues').subscribe(issues => this.issueElements = issues);
+    this.issuesApi.getIssues('issues?state=Done').subscribe(issues => {
+      console.log(issues);
+      return this.issueElements = issues;
+    });
   }
 }
