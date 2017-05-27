@@ -9,14 +9,11 @@ import {RouterModule} from '@angular/router';
 import {appRoutes} from './app.router';
 import {IssuesApiService} from './services/issues-api.service';
 import {MainModule} from './main/main.module';
-import { IssueComponent } from './issue/issue.component';
-import { ModerateComponent } from './moderate/moderate.component';
+import {ModerateModule} from './moderate/moderate.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    IssueComponent,
-    ModerateComponent
+    AppComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -24,7 +21,8 @@ import { ModerateComponent } from './moderate/moderate.component';
     FormsModule,
     HttpModule,
     IssuesModule,
-    MainModule
+    MainModule,
+    ModerateModule,
   ],
   providers: [IssuesApiService],
   bootstrap: [AppComponent]

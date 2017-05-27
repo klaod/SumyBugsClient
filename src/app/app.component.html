@@ -8,8 +8,9 @@
         </div>
         <!-- Tabs -->
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-            <a href="#fixed-tab-1" routerLink="/issues" class="mdl-layout__tab is-active">Не выполненые задачи</a>
-            <a href="#fixed-tab-2" routerLink="/main"  class="mdl-layout__tab">Выполненые задачи</a>
+            <a href="#fixed-tab-1" routerLink="/issues" class="mdl-layout__tab is-active">Не выполнено</a>
+            <a href="#fixed-tab-2" routerLink="/main"  class="mdl-layout__tab">Выполнено</a>
+            <a *ngIf="isModerator" href="#fixed-tab-2" routerLink="/moderate"  class="mdl-layout__tab">Модератор</a>
         </div>
     </header>
 </div>

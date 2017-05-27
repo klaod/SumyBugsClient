@@ -12,6 +12,6 @@ export class MainComponent implements OnInit {
   constructor(private issuesApi: IssuesApiService) { }
 
   ngOnInit() {
-     this.issuesApi.getIssues('issues').subscribe(issues => this.notCompetedIssues = issues);
+     this.issuesApi.getIssues('issues?state=Pending').subscribe(issues => this.notCompetedIssues = issues);
   }
 }

@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Issue} from '../issue.model';
-import {IssuesApiService} from "../../services/issues-api.service";
 
 @Component({
   selector: 'app-issue-table',

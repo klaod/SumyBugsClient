@@ -4,7 +4,7 @@ import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
-import {Observable} from "rxjs";
+import {Observable} from 'rxjs';
 
 @Injectable()
 export class IssuesApiService {
@@ -12,7 +12,10 @@ export class IssuesApiService {
   address = 'http://54.164.108.6:3000/';
   constructor(private http: Http) {}
   getIssues(req) {
-    return this.http.get(this.address + req).map(res => res.json()).catch(this.handleError);
+    let request = this.address + req;
+    console.log(encodeURI(request));
+    debugger;
+    return this.http.get(encodeURI(request)).map(res => res.json()).catch(this.handleError);
   }
   handleError(err: any) {
     return Observable.throw(err.message || err);

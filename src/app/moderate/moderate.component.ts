@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Issue} from '../issues/issue.model';
+import {IssuesApiService} from '../services/issues-api.service';
 
 @Component({
   selector: 'app-moderate',
@@ -6,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./moderate.component.css']
 })
 export class ModerateComponent implements OnInit {
-
-  constructor() { }
+  notModeratedIssues: Issue[];
+  constructor(private issuesApi: IssuesApiService) { }
 
   ngOnInit() {
+    this.issuesApi.getIssues('issues?state=Waiting Moderation').subscribe(issues => this.notModeratedIssues = issues);
   }
-
 }
