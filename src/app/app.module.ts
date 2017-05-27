@@ -10,6 +10,9 @@ import {appRoutes} from './app.router';
 import {IssuesApiService} from './services/issues-api.service';
 import {MainModule} from './main/main.module';
 import {ModerateModule} from './moderate/moderate.module';
+import {IssueModule} from './issue/issue.module';
+import {StoreModule} from '@ngrx/store';
+import {issueReducer} from './issue/issue.reduser';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,8 @@ import {ModerateModule} from './moderate/moderate.module';
     IssuesModule,
     MainModule,
     ModerateModule,
+    IssueModule,
+    StoreModule.provideStore({ issue: issueReducer })
   ],
   providers: [IssuesApiService],
   bootstrap: [AppComponent]
