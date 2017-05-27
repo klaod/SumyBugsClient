@@ -11,6 +11,7 @@ import {IssuesApiService} from './services/issues-api.service';
 import {MainModule} from './main/main.module';
 import { IssueComponent } from './issue/issue.component';
 
+import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { IssueComponent } from './issue/issue.component';
     FormsModule,
     HttpModule,
     IssuesModule,
-    MainModule
+    MainModule,
+    AlertModule
   ],
   providers: [IssuesApiService],
   bootstrap: [AppComponent]
