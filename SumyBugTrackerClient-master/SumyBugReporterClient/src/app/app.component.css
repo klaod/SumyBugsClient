@@ -1,0 +1,39 @@
+.demo-card-square.mdl-card {
+    width: 320px;
+    height: 320px;
+}
+.demo-card-square > .mdl-card__title {
+    color: #fff;
+    background:
+            url('http://fakty.ua/user_uploads/images/articles/2013/09/12/169720/perevernulas-marshrutka2_thumb_medium300_0_big.jpg') bottom right 15% no-repeat #46B6AC;
+}
+
+.issue{
+    display: block;
+    float: left;
+
+}
+
+.description{
+    position:relative;
+    float:right;
+    margin: 15px;
+}
+
+.mdl-dialog1 {
+    border: none;
+    box-shadow: 0 9px 46px 8px rgba(0, 0, 0, 0.14), 0 11px 15px -7px rgba(0, 0, 0, 0.12), 0 24px 38px 3px rgba(0, 0, 0, 0.2);
+    width:680px; }
+
+#reportButton{
+    position: relative;
+    float:bottom;
+    width: 680px;
+}
+
+#map
+{
+    height: 320px;
+    width: 320px;
+    float:left;
+}

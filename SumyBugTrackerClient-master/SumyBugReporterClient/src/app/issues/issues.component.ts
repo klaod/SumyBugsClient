@@ -12,7 +12,6 @@ export class IssuesComponent implements OnInit {
   constructor(private issuesApi: IssuesApiService) { }
 
   ngOnInit() {
-    this.issueElements = this.issuesApi.getIssues();
+    this.issuesApi.getIssues().subscribe(issues => this.issueElements = issues);
   }
-
 }

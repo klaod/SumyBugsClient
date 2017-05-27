@@ -1,9 +1,19 @@
 export interface Issue {
-    issueId: number;
-    creationDate: Date;
-    title: string;
-    imgPath: string;
+    state: string;
     description: string;
-    rate: number;
+    address: string;
+    author: Author;
+    updated_at: string;
+    created_at: string;
+    id: number;
+    photo_path: string;
 }
+
+export interface Author {
+    phone_number: string;
+    first_name: string;
+    last_name: string;
+    user_id: string;
+}
+
 
