@@ -14,6 +14,7 @@ import {IssueModule} from './issue/issue.module';
 import {StoreModule} from '@ngrx/store';
 import {issueReducer} from './issue/issue.reduser';
 
+import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
 @NgModule({
   declarations: [
     AppComponent
@@ -25,6 +26,8 @@ import {issueReducer} from './issue/issue.reduser';
     HttpModule,
     IssuesModule,
     MainModule,
+    AlertModule,
+    ModerateModule
     ModerateModule,
     IssueModule,
     StoreModule.provideStore({ issue: issueReducer })

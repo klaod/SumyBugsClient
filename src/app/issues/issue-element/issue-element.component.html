@@ -1,15 +1,26 @@
-<div class="issueElement" class="demo-card-square mdl-card mdl-shadow--2dp issueElement">
-  <div class="img">
-    <img src="{{issue.photo_path}}" alt="">
-  </div>
-  <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text">{{issue.created_at}}</h2>
-  </div>
-  <h2 class="issueElement_title">{{issue.address}}</h2>
-  <div class="mdl-card__supporting-text">
-    {{issue.address}}
-  </div>
-  <div class="mdl-card__supporting-text">
-    {{issue.description}}
+<!--<div style="margin: 20px">-->
+<!--<div style="max-height: 400px" class="thumbnail">-->
+<!--<img class="img-responsive" src="{{issue.photo_path}}" alt="">-->
+<!--</div>-->
+<!--<b>{{issue.created_at | date :'yMMMdjms' }}</b>-->
+<!--<div class="mdl-card__supporting-text">-->
+<!--{{issue.address}}-->
+<!--</div>-->
+<!--</div>-->
+
+
+<div class="col-xs-18 col-sm-6 col-md-4">
+  <div class="thumbnail">
+    <img src="{{issue.photo_path}}" alt="" class="img-responsive">
+    <div class="caption">
+      <hr>
+      <p>{{issue.created_at*1000 | date :'yMMMdjms' }}</p>
+      <p *ngIf="issue.address.toString() != ''"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;{{issue.address}}
+      </p>
+      <p><a href="#" class="btn btn-info btn-xs" role="button">Button</a> <a href="#" class="btn btn-default btn-xs"
+                                                                             role="button">Button</a></p>
+    </div>
   </div>
 </div>
+
+
