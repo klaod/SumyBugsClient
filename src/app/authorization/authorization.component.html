@@ -1,0 +1,16 @@
+<!--<button (click)="authorization();">CLick me</button>
+
+<form *ngIf="showAuthorizationForm"></form>-->
+
+<div *ngIf="!authorized">
+  <label for="user-login">Логин </label>
+  <input type="text" id="user-login"#login/>
+  <label for="user-password" >Пароль </label>
+  <input type="password" id="user-password" #pass/>
+  <button (click)="logIn(login.value, pass.value);">Войти</button>
+</div>
+<div *ngIf="authorized">
+  <span>{{rolePresentation}}: </span>
+  <span>{{login}}</span>
+  <button (click)="logOut();">Выйти</button>
+</div>
