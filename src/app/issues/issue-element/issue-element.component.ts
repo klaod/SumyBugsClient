@@ -16,7 +16,7 @@ export class IssueElementComponent implements OnInit {
   ngOnInit() {
   }
   addIssueToStore() {
-      this.router.navigate(['/detail', this.issue.id]);
+      this.router.navigate(['/issue', this.issue.id]);
    // this.store.dispatch({type: ISSUE_ACTIONS.ADD_ISSUE, payload: this.issue});
   }
 

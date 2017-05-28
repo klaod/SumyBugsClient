@@ -17,10 +17,12 @@ export class IssueComponent implements OnInit {
     //this.store.select('issue').subscribe((state) => this.issue = state );
     this.route.params
         .switchMap((params: Params) => this.getIssue(params['id']))
-        .subscribe(issue => this.issue = issue);
+        .subscribe(issue => {
+          this.issue = issue;
+        });
   }
 
   getIssue(id: number) {
-    return this.issuesApi.getIssues('issues?id=' + id);
+    return this.issuesApi.getIssues('issues/' + id);
   }
 }

@@ -7,6 +7,9 @@ export const appRoutes: Routes = [
     {path: 'issues' , component: IssuesComponent},
     {path: 'main' , component: MainComponent},
     {path: 'moderate' , component: ModerateComponent},
+    {path: 'issues/:id' , component: IssueComponent},
     {path: 'issue/:id' , component: IssueComponent},
+    {path: 'main/:id' , component: IssueComponent},
+    {path: 'moderate/:id' , component: IssueComponent},
     {path: '' , redirectTo: '/main', pathMatch: 'full'}
 ];
