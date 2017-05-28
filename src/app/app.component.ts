@@ -6,7 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  isModerator = true;
+  role: string;
+  constructor() {
+    this.role = '';
+  }
   updateRole(value) {
+    console.log(value);
+    this.role = value;
   }
 }

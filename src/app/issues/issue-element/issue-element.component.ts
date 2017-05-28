@@ -11,13 +11,16 @@ import {Router} from '@angular/router';
 })
 export class IssueElementComponent implements OnInit {
   @Input() issue: Issue;
+  @Input() role: string;
   constructor(private store: Store<Issue>, private router: Router) { }
 
   ngOnInit() {
+    this.role;
+    debugger;
   }
   addIssueToStore() {
-      this.router.navigate(['/issue', this.issue.id]);
-   // this.store.dispatch({type: ISSUE_ACTIONS.ADD_ISSUE, payload: this.issue});
+    this.router.navigate(['/issues/']);
+    // this.store.dispatch({type: ISSUE_ACTIONS.ADD_ISSUE, payload: this.issue});
   }
 
 }

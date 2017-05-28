@@ -33,7 +33,6 @@ import {AuthorizationModule} from'./authorization/authorization.module';
     ModerateModule,
     IssueModule,
     AuthorizationModule,
-    
     StoreModule.provideStore({ issue: issueReducer }),
     StoreDevtoolsModule.instrumentOnlyWithExtension({
       maxAge: 5

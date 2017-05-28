@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Issue} from '../issues/issue.model';
 import {IssuesApiService} from '../services/issues-api.service';
 
@@ -10,7 +10,11 @@ import {IssuesApiService} from '../services/issues-api.service';
 export class MainComponent implements OnInit {
   notCompetedIssues: Issue[];
   name = 10;
-  constructor(private issuesApi: IssuesApiService) { }
+  @Input() role: string;
+  constructor(private issuesApi: IssuesApiService) {
+    this.role;
+    debugger;
+  }
 
   ngOnInit() {
      this.issuesApi.getIssues('issues?state=Pending').subscribe(issues => this.notCompetedIssues = issues);
