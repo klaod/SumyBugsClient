@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Issue} from '../issues/issue.model';
 import {IssuesApiService} from '../services/issues-api.service';
 
@@ -9,6 +9,7 @@ import {IssuesApiService} from '../services/issues-api.service';
 })
 export class ModerateComponent implements OnInit {
   notModeratedIssues: Issue[];
+  @Input() role: string;
   constructor(private issuesApi: IssuesApiService) { }
 
   ngOnInit() {

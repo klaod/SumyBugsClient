@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Issue} from '../issue.model';
 import {Store} from '@ngrx/store';
 import {ISSUE_ACTIONS} from '../../issue/issue.reduser';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-issue-element',
@@ -10,12 +11,16 @@ import {ISSUE_ACTIONS} from '../../issue/issue.reduser';
 })
 export class IssueElementComponent implements OnInit {
   @Input() issue: Issue;
-  constructor(private store: Store<Issue>) { }
+  @Input() role: string;
+  constructor(private store: Store<Issue>, private router: Router) { }
 
   ngOnInit() {
+    this.role;
+    debugger;
   }
   addIssueToStore() {
-    this.store.dispatch({type: ISSUE_ACTIONS.ADD_ISSUE, payload: this.issue});
+    this.router.navigate(['/issues/']);
+    // this.store.dispatch({type: ISSUE_ACTIONS.ADD_ISSUE, payload: this.issue});
   }
 
 }

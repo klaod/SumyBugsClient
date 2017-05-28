@@ -8,6 +8,7 @@ import {Issue} from '../issue.model';
 })
 export class IssueTableComponent implements OnInit {
   @Input() issueElements: Issue[];
+  @Input() role: string;
 
   constructor() {
   }

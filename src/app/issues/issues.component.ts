@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {IssuesApiService} from '../services/issues-api.service';
 import {Issue} from './issue.model';
 
@@ -9,6 +9,7 @@ import {Issue} from './issue.model';
 })
 export class IssuesComponent implements OnInit {
   issueElements: Issue[];
+  @Input() role: string;
   constructor(private issuesApi: IssuesApiService) { }
 
   ngOnInit() {
