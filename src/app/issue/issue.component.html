@@ -17,7 +17,7 @@
     </dl>
     <p> {{issue.location_longitude}} </p>
     <p> {{issue.location_latitude}} </p>
-    <p>
+    <p *ngIf="issue.state == 'Waiting Moderation'">
       <a href="#" class="btn btn-success" role="button">Одобрити</a>
       <a href="#" class="btn btn-danger" role="button">Блокувати</a>
     </p>
