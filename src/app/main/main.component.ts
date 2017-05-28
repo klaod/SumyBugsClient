@@ -12,8 +12,6 @@ export class MainComponent implements OnInit {
   name = 10;
   @Input() role: string;
   constructor(private issuesApi: IssuesApiService) {
-    this.role;
-    debugger;
   }
 
   ngOnInit() {

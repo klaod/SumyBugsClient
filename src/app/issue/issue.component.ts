@@ -11,14 +11,18 @@ import {ActivatedRoute, Params} from '@angular/router';
 })
 export class IssueComponent implements OnInit {
   issue: Issue;
+  role: any;
   constructor(private store: Store<Issue>, private issuesApi: IssuesApiService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    //this.store.select('issue').subscribe((state) => this.issue = state );
+    this.store.select('issue').subscribe((state) => {
+      this.role = state;
+    });
     this.route.params
         .switchMap((params: Params) => this.getIssue(params['id']))
         .subscribe(issue => {
           this.issue = issue;
+          debugger;
         });
   }
 

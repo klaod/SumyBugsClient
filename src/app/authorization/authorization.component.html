@@ -12,8 +12,8 @@
   <button (click)="logIn(login.value, pass.value);" class="btn btn-default">Вiйти</button>
 </form>
 
-<div *ngIf="authorized">
-  <span>{{rolePresentation}}: </span>
-  <span>{{login}}</span>
-  <button (click)="logOut();">Выйти</button>
+<div *ngIf="authorized" class ="authorized ">
+    <span>{{rolePresentation}}: </span>
+    <span>{{login}}</span>
+    <button class="btn btn-default" (click)="logOut();">Выйти</button>
 </div>

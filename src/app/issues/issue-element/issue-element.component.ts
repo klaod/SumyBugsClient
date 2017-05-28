@@ -12,15 +12,11 @@ import {Router} from '@angular/router';
 export class IssueElementComponent implements OnInit {
   @Input() issue: Issue;
   @Input() role: string;
-  constructor(private store: Store<Issue>, private router: Router) { }
+  constructor(private router: Router) { }
 
-  ngOnInit() {
-    this.role;
-    debugger;
-  }
+  ngOnInit() {}
   addIssueToStore() {
     this.router.navigate(['/issues/', this.issue.id]);
-    // this.store.dispatch({type: ISSUE_ACTIONS.ADD_ISSUE, payload: this.issue});
   }
 
 }

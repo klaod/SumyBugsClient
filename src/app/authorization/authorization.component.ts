@@ -34,19 +34,17 @@ export class AuthorizationComponent implements OnInit {
     }
     constructor() {
         this._host = 'http://54.164.108.6:3000/users';
-        if(this.id == null) {
-            this.role = "";
-            this.login = "";
-            this.pass = "";
-            this.id = -1;
-        }
+        this.role = "";
+        this.login = "";
+        this.pass = "";
+        this.id = -1;
     }
 
     public logIn(login, pass) {
         this.login = login;
         this.pass = pass;
         this._getUserData().then(data => {
-            if (!!data && data.length > 0) {
+            if(!!data && data.length > 0) {
                 data = data[0];
                 this.login = data.login;
                 this.role = data.role;
@@ -65,6 +63,8 @@ export class AuthorizationComponent implements OnInit {
             this.logOut();
             alert('Something went wrong!');
         });
+
+        return false;
     }
     public logOut() {
         this.authorized = false;
