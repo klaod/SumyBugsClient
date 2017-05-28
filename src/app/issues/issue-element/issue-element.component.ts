@@ -19,7 +19,7 @@ export class IssueElementComponent implements OnInit {
     debugger;
   }
   addIssueToStore() {
-    this.router.navigate(['/issues/']);
+    this.router.navigate(['/issues/', this.issue.id]);
     // this.store.dispatch({type: ISSUE_ACTIONS.ADD_ISSUE, payload: this.issue});
   }
 
