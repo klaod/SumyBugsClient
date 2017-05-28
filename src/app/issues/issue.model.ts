@@ -1,12 +1,12 @@
 export interface Issue {
-    state: string;
-    description: string;
-    address: string;
-    author: Author;
-    updated_at: string;
-    created_at: string;
-    id: number;
-    photo_path: string;
+    state?: string;
+    description?: string;
+    address?: string;
+    author?: Author;
+    updated_at?: string;
+    created_at?: string;
+    id?: number;
+    photo_path?: string;
 }
 
 export interface Author {

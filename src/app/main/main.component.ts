@@ -9,6 +9,7 @@ import {IssuesApiService} from '../services/issues-api.service';
 })
 export class MainComponent implements OnInit {
   notCompetedIssues: Issue[];
+  name = 10;
   constructor(private issuesApi: IssuesApiService) { }
 
   ngOnInit() {

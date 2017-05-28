@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Issue} from '../issues/issue.model';
+import {Store} from '@ngrx/store';
 
 @Component({
   selector: 'app-issue',
@@ -6,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./issue.component.css']
 })
 export class IssueComponent implements OnInit {
-
-  constructor() { }
+  issue: Issue;
+  constructor(private store: Store<Issue>) { }
 
   ngOnInit() {
+    this.store.select('issue').subscribe((state) => this.issue = state );
   }
-
 }
