@@ -1,12 +1,27 @@
-
 <div class="col-md-offset-3 col-md-6">
-        <img src="{{issue.photo_path}}" alt="" class="img-responsive">
-        <div class="caption">
-            <hr>
-            <p>{{issue.created_at*1000 | date :'yMMMdjms' }}</p>
-            <p *ngIf="issue.address.toString() != ''"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;{{issue.address}}
-            </p>
-        </div>
-    </div>
+  <img src="{{issue.photo_path}}" alt="" class="img-responsive">
+  <div class="caption">
+    <hr>
+    <p><span class="label label-default">{{issue.created_at*1000 | date :'yMMMdjms' }}</span></p>
+    <p *ngIf="issue.address.toString() != ''"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;{{issue.address}}
+    </p>
+    <p>
+      {{issue.description}}
+    </p>
+    <hr>
+    <dl>
+      <dt>Автор</dt>
+      <dd>{{issue.author_first_name + " " + issue.author_last_name}}</dd>
+      <dt>Телефон</dt>
+      <dd>{{issue.author_phone_number}}</dd>
+    </dl>
+    <p> {{issue.location_longitude}} </p>
+    <p> {{issue.location_latitude}} </p>
+    <p *ngIf="issue.state == 'Waiting Moderation'">
+      <a href="#" class="btn btn-success" role="button">Одобрити</a>
+      <a href="#" class="btn btn-danger" role="button">Блокувати</a>
+    </p>
+  </div>
+</div>
 
 
