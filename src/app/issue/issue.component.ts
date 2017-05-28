@@ -22,7 +22,6 @@ export class IssueComponent implements OnInit {
         .switchMap((params: Params) => this.getIssue(params['id']))
         .subscribe(issue => {
           this.issue = issue;
-          debugger;
         });
   }
 
