@@ -54,10 +54,7 @@ export class AuthorizationComponent implements OnInit {
                 this.authorized = true;
 
                 this.updateRole.emit(this.role);  
-                localStorage.setItem("user", JSON.stringify({
-                    login : this.login,
-                    pass: this.pass
-                }));              
+                this._saveUserData();      
             }
             else {
                 this.authorized = false;
@@ -76,8 +73,15 @@ export class AuthorizationComponent implements OnInit {
         this.id = -1;
 
         this.updateRole.emit(this.role);
+        this._saveUserData();
     }
 
+    private _saveUserData() {
+        localStorage.setItem("user", JSON.stringify({
+            login : this.login,
+            pass: this.pass
+        }));        
+    }
     private _getUserData():Promise<any> {        
         return new Promise((resolve, reject) => {
             let params = "?login=" + this.login+"&pass="+this.pass;
