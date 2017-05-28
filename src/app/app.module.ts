@@ -16,6 +16,8 @@ import {issueReducer} from './issue/issue.reduser';
 
 import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
+import {AuthorizationModule} from'./authorization/authorization.module';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -30,6 +32,8 @@ import {StoreDevtoolsModule} from "@ngrx/store-devtools";
     AlertModule,
     ModerateModule,
     IssueModule,
+    AuthorizationModule,
+    
     StoreModule.provideStore({ issue: issueReducer }),
     StoreDevtoolsModule.instrumentOnlyWithExtension({
       maxAge: 5

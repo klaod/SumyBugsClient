@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
     selector: 'app-authorization',
@@ -15,6 +15,8 @@ export class AuthorizationComponent implements OnInit {
     pass:string;
     rolePresentation:string;
     id:number;
+
+    @Output() updateRole = new EventEmitter<string>();
 
     set role(value) {
         switch(value) {
@@ -47,7 +49,9 @@ export class AuthorizationComponent implements OnInit {
                 this.login = data.login;
                 this.role = data.role; 
                 this.id = data.id;           
-                this.authorized = true;                
+                this.authorized = true;
+
+                this.updateRole.emit(this.role);                
             }
             else {
                 this.authorized = false;
@@ -64,6 +68,8 @@ export class AuthorizationComponent implements OnInit {
         this.login = "";
         this.pass = "";
         this.id = -1;
+
+        this.updateRole.emit(this.role);
     }
 
     private _getUserData():Promise<any> {        
