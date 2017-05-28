@@ -2,13 +2,16 @@
 
 <form *ngIf="showAuthorizationForm"></form>-->
 
-<div *ngIf="!authorized">
-  <label for="user-login">Логин </label>
-  <input type="text" id="user-login"#login/>
-  <label for="user-password" >Пароль </label>
-  <input type="password" id="user-password" #pass/>
-  <button (click)="logIn(login.value, pass.value);">Войти</button>
-</div>
+<form *ngIf="!authorized" class="navbar-form navbar-right" role="search">
+  <div class="form-group">
+    <input id="user-login" #login class="form-control" name="username" placeholder="Username" type="text">
+  </div>
+  <div class="form-group">
+    <input class="form-control" name="password" placeholder="Password" type="password" id="user-password" #pass>
+  </div>
+  <button (click)="logIn(login.value, pass.value);" class="btn btn-default">Вiйти</button>
+</form>
+
 <div *ngIf="authorized">
   <span>{{rolePresentation}}: </span>
   <span>{{login}}</span>
