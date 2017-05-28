@@ -34,10 +34,12 @@ export class AuthorizationComponent implements OnInit {
     }    
     constructor() {        
         this._host = 'http://54.164.108.6:3000/users';
-        this.role = "";
-        this.login = "";
-        this.pass = "";   
-        this.id = -1;
+        if(this.id == null) {
+            this.role = "";
+            this.login = "";
+            this.pass = "";   
+            this.id = -1;
+        }                
     }
 
     public logIn(login, pass) {       
@@ -51,7 +53,11 @@ export class AuthorizationComponent implements OnInit {
                 this.id = data.id;           
                 this.authorized = true;
 
-                this.updateRole.emit(this.role);                
+                this.updateRole.emit(this.role);  
+                localStorage.setItem("user", JSON.stringify({
+                    login : this.login,
+                    pass: this.pass
+                }));              
             }
             else {
                 this.authorized = false;
@@ -89,5 +95,10 @@ export class AuthorizationComponent implements OnInit {
     }
 
     public ngOnInit() {
+        let saved = localStorage.getItem("user");
+        if(!!saved) {
+            let data = JSON.parse(saved);
+            this.logIn(data.login, data.pass);
+        }
     }
 }
